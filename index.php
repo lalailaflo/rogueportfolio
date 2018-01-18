@@ -1,1 +1,1 @@
-<?php header( 'Location: /homeROGUE.html' ) ;  ?>
+<?php header( 'Location: /index.html' ) ;  ?>
