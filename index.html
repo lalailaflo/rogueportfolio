@@ -27,8 +27,8 @@
 
 	<div id="wrapper">
 		<div id="bgcontainer">
-			<img src="bgfixed.jpg" class="visible"/>
-			<img src="me.jpg" class="me"/>
+			<!--<img src="bgfixed.jpg" class="visible"/>
+			<img src="me.jpg" class="me"/> -->
 		</div>
 		<header>
 				
@@ -223,7 +223,7 @@
 		});
 	});
 	// NAVIGATION HANDLING
-
+	
 	document.getElementById('mainnav').addEventListener('click',(e)=>{
 		//let historyObj = { link: e.target.getAttribute('href') };
 		
@@ -243,17 +243,18 @@
 			/* if target section is 'nosotros' toggles background visibility through a class. 
 			If not, blurs the default background */
 			if(el == 'nosotros'){
-					document.getElementById('bgcontainer').children[0].classList.remove('visible');
-					document.getElementById('bgcontainer').children[1].classList.add('visible');
+				
+					document.getElementById('bgcontainer').classList.remove('blur');
+					document.getElementById('bgcontainer').classList.add('me');
 			}else{
-				document.getElementById('bgcontainer').children[1].classList.remove('visible');
-					document.getElementById('bgcontainer').children[0].classList.add('visible');
+
+					document.getElementById('bgcontainer').classList.remove('me');
 			} 
 			if(el!='home' && el!='nosotros') {
-				document.getElementById('bgcontainer').style.filter = 'blur(20px)';
-			
+				document.getElementById('bgcontainer').classList.add('blur');
+				
 			} else {
-				document.getElementById('bgcontainer').style.filter = '';
+				document.getElementById('bgcontainer').classList.remove('blur');
 			}
 			//removes classes from sibling menu items and sections
 			removeActiveFromMenuSibling(e);

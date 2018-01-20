@@ -40,22 +40,23 @@
 
     }
     #bgcontainer{
-        width: 100%;
+        width: 110%;
+        height: 110%;
+        top:-5%;
+        left: -5%;
         position: fixed;
         z-index: -1;
         transition:all .2s linear;
+        background-image: url('../bgfixed.jpg');
+        background-size: cover;
     }
-    #bgcontainer img{
-        width: 110%;
-        height: 110%;
-        margin-left: -5%;
-        margin-top: -5%;
-        transition: all .3s linear;
-        display: none;
+    #bgcontainer.blur{
+        filter:blur(20px);
     }
-    #bgcontainer img.visible{
-        display: block;
+    #bgcontainer.me{
+        background-image: url('../me.jpg');
     }
+
     header{
         position: fixed;
         top: 0;
@@ -121,12 +122,7 @@ cursor: pointer;}
     a.link-external:hover{
         margin-left: 20px;
     }
-    /* me */
 
-    #bgcontainer img.me{
-        margin-top: -15%;
-        filter: grayscale();
-    }
     #nosotros{color: #fff;}
     #nosotros .intro{
         overflow: hidden;
@@ -145,7 +141,7 @@ cursor: pointer;}
     #nosotros .me-details{
 
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         flex-grow: 1;
         margin: 100px 1% 20px;
         justify-content: center;
@@ -291,3 +287,24 @@ cursor: pointer;}
         from { opacity: 0; }
         to { opacity: 1; }
     }
+    @media (max-width: 890px){
+        .grid{width: 100%;}
+        .grid li{width: 50%;}
+    }
+    @media (max-width: 768px){
+        #secondnav{display: block;}
+        .me-details .box h4{font-size: 22px;}
+        nav li a{padding: 35px;}
+       
+    }
+    @media (max-width: 640px){
+        nav li a{padding: 20px;font-size: 19px;}
+        .grid li{width: 100%;}
+        #secondnav li{font-size: 20px;}
+        #home h1 img{width: 100%;}
+        #nosotros .intro{width: 100%;padding: 10px;margin-top: 220px;}
+        #nosotros .intro h3{font-size: 30px;}
+        .box{width: 100%;}
+        #nosotros .me-details{margin: 0;flex-wrap: wrap;}
+        #bgcontainer.me{background-position: 50% 20%;}
+    } 
