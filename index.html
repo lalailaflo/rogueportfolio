@@ -236,7 +236,8 @@
 			// get target section
 			let targ = document.getElementById(el);
 			// add 'active' clss to current menu item
-			e.srcElement.parentElement.className = 'active';
+
+			e.target.parentElement.className = 'active';
 			// add 'visible' class to target section
 			targ.className = 'visible';
 
@@ -263,15 +264,15 @@
 
 		function removeActiveFromMenuSibling(e){
 			const menusibl = e.currentTarget.children;
-			for (const ms of menusibl) {
-				if(ms != e.srcElement.parentElement){
+			for (ms of menusibl) {
+				if(ms != e.target.parentElement){
 					ms.className = '';
 				}
 			}
 		}
 		function removeVisibleFromSection(targ){
 			const sibl = targ.parentElement.getElementsByTagName('section');
-			for (const s of sibl) {
+			for (s of sibl) {
 				if(s!=targ){
 
 					if(s.classList == 'visible'){
